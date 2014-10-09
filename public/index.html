@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" >
+
+<head>
+  <meta charset="utf-8">
+  <!-- If you delete this meta tag World War Z will become a reality -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pop a Bubble</title>
+  
+  <link href='//fonts.googleapis.com/css?family=Bubblegum+Sans|Press+Start+2P' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//cdn.foundation5.zurb.com/foundation.css">
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+
+  <!-- body content here -->
+  <header class="row text-center">
+    <h1>Pop a Bubble</h1>
+  </header>
+  
+  <div class="row text-center">
+    <canvas id="game" height="400" width="500">
+      Please upgrade your browser.
+    </canvas>
+  </div>
+  
+  <footer class="row text-center">
+    <h4 class="old-school">by <a href="https://github.com/bruslim">@bruslim</a></h4>
+    <h6><small class="old-school tiny">requires html5 canvas</small></h6>
+  </footer>
+
+  <script src="//code.createjs.com/createjs-2013.12.12.min.js"></script>
+  <script src="game.js"></script>
+  
+  <script> 
+    var game = new Game("game");
+  </script>
+  
+</body>
+</html>

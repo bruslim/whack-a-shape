@@ -1,0 +1,18 @@
+body {
+  background: url(assets/small_steps/small_steps.png) ;
+}
+
+header, footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+header h1 {
+  font-family: 'Bubblegum Sans', cursive;
+  font-size: 80px;
+  color: #4E8EA9;
+}
+
+.old-school {
+  font-family: 'Press Start 2P', cursive;
+}
