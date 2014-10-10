@@ -52,7 +52,7 @@ var Game = (function() {
       callback.apply(this);
     }
     if (this._eventQueue.length > 0) {
-      setTimeout(this.processEventQueue.bind(this), 0);
+      requestAnimationFrame(this.processEventQueue.bind(this));
     }
   };
   
@@ -64,7 +64,7 @@ var Game = (function() {
     this._eventQueue.push(function() {
       handler.apply(self, args);
     });
-    setTimeout(this.processEventQueue.bind(this), 0);
+    requestAnimationFrame(this.processEventQueue.bind(this));
   };
   
   Stateful.prototype.transition = function(nextState) {
@@ -237,7 +237,6 @@ var Game = (function() {
         this.transition('hidden');
       },
       _onExit: function() {
-        
         if (this.timers.hide) {
           clearTimeout(this.timers.hide);
           delete(this.timers.hide);
@@ -449,7 +448,6 @@ var Game = (function() {
         }
       }
     });
-    
     Stateful.call(this,'start-screen');
     createjs.Ticker.addEventListener('tick',this.draw.bind(this));
   }
@@ -585,7 +583,7 @@ var Game = (function() {
             missed: 0,
             count: 0
           });
-
+          
           var title2 = new GameText('Overall Score', '20px');
           title2.positionCenter(this.canvas, 40, next);
           this.stage.addChild(title2);
