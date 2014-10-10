@@ -68,7 +68,9 @@ var Game = (function() {
   };
   
   Stateful.prototype.transition = function(nextState) {
-    if (!this.states[nextState]) { return; }
+    if (!this.states[nextState] || nextState === this.state) { 
+      return; 
+    }
     this.trigger('_onExit',{ nextState: nextState });
     var previousState = this.state;
     this.state = nextState;
